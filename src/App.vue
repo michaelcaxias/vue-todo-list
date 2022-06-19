@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from './components/HelloWorld/HelloWorld.vue';
 </script>
 
 <template>
-  <header>
-    <HelloWorld msg="Hello, world!" />
-  </header>
+  <HelloWorld msg="Hello, world!" />
 </template>
 
 <style src="./assets/sass/_index.scss" lang="sass" />
