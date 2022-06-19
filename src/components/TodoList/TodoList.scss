@@ -12,6 +12,8 @@
   .todo-container {
     background-color: rgba(255, 255, 255, 0.514);
     border-radius: $rounded;
+    max-height: 570px;
+    overflow: auto;
     padding: 2rem;
     width: 40rem;
   }
@@ -73,6 +75,11 @@
       padding: 1rem;
     }
 
+    .completed {
+      background-color: $primary;
+      color: white;
+    }
+
     .task-actions {
       display: flex;
       gap: 0.5rem;
@@ -105,4 +112,10 @@
       }
     }
   }
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.151);
+  border-radius: $rounded;
 }
