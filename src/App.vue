@@ -5,9 +5,8 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <header>
     <HelloWorld msg="Hello, world!" />
+    <h1>Olá</h1>
   </header>
 </template>
 
-<style>
-@import "./assets/base.css";
-</style>
+<style src="./assets/sass/_index.scss" lang="sass" />
