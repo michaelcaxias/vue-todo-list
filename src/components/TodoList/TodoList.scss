@@ -132,7 +132,7 @@ hr {
   border-radius: $rounded;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile) {
   .container .todo-container {
     width: 95%;
     max-height: 95%;
