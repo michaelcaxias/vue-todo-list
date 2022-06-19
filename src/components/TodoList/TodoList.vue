@@ -23,16 +23,22 @@ export default {
 
 <template>
   <div class="container">
-    <h1>Todo List</h1>
-    <div>
-      <input type="text" @change="addTodo" />
-      <button type="button">Adicionar</button>
+    <div class="todo-container">
+      <div class="add-todo-container">
+        <input
+          class="todo-input"
+          placeholder="Adicione uma tarefa aqui.."
+          type="text"
+          @change="addTodo"
+        />
+        <button class="add-todo-btn" type="button">+</button>
+      </div>
+      <ul>
+        <li v-for="todo in (todos as string[])" :key="todo">
+          {{ todo }}
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li v-for="todo in (todos as string[])" :key="todo">
-        {{ todo }}
-      </li>
-    </ul>
   </div>
 </template>
 
