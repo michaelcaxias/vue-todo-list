@@ -1,16 +1,16 @@
 <script lang="ts">
 export default {
+  name: 'TodoList',
   data() {
     return {
-      parentMessage: 'Parent',
-      todos: ['oi'],
+      todos: [],
     };
   },
   methods: {
-    addTodo(event) {
-      if (event.target.value) {
-        this.todos.push(event.target.value);
-        event.target.value = '';
+    addTodo({ target }) {
+      if (target.value) {
+        this.todos.push(target.value);
+        target.value = '';
       }
     },
   },
@@ -22,7 +22,7 @@ export default {
     <h1>Todo List</h1>
     <div>
       <input type="text" @change="addTodo" />
-      <button type="button" @click="addTodo">Adicionar</button>
+      <button type="button">Adicionar</button>
       <ul>
         <li v-for="todo in todos" :key="todo">
           {{ todo }}

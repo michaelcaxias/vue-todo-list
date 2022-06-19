@@ -1,5 +1,12 @@
-<script setup lang="ts">
+<script lang="ts">
 import TodoList from './components/TodoList/TodoList.vue';
+
+export default {
+  name: 'App',
+  components: {
+    TodoList,
+  },
+};
 </script>
 
 <template>
