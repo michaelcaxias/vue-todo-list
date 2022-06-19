@@ -3,7 +3,7 @@ defineProps<{ msg: string }>();
 </script>
 
 <template>
-  <div class="page">
+  <div class="container">
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/512px-Vue.js_Logo_2.svg.png"
       alt="vue logo"
@@ -12,4 +12,4 @@ defineProps<{ msg: string }>();
   </div>
 </template>
 
-<style src="./HelloWorld.scss" lang="sass" scoped />
+<style src="./TodoList.scss" lang="sass" scoped />
