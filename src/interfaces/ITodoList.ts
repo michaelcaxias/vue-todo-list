@@ -9,4 +9,5 @@ export interface ITodoList {
   addTodo: (evenr: Event) => void;
   removeTodo: (todo: ITodo) => void;
   toggleTodo: (todo: ITodo) => void;
+  handleClassName: (todo: ITodo) => string;
 }

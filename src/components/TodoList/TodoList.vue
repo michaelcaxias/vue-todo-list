@@ -52,7 +52,12 @@ export default {
         </button>
       </div>
       <ul class="task-list">
-        <li class="task" v-for="todo in todos" :key="todo.id">
+        <li
+          class="task"
+          :class="{ completed: todo.completed }"
+          v-for="todo in todos"
+          :key="todo.id"
+        >
           {{ todo.text }}
           <div class="task-actions">
             <button
