@@ -131,3 +131,10 @@ hr {
   border-bottom: 0.2rem solid rgba(0, 0, 0, 0.151);
   border-radius: $rounded;
 }
+
+@media screen and (max-width: 768px) {
+  .container .todo-container {
+    width: 95%;
+    max-height: 95%;
+  }
+}
