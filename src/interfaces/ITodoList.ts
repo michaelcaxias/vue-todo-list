@@ -10,4 +10,6 @@ export interface ITodoList {
   removeTodo: (todo: ITodo) => void;
   toggleTodo: (todo: ITodo) => void;
   handleClassName: (todo: ITodo) => string;
+  remaining: () => ITodo[];
+  completed: () => ITodo[];
 }

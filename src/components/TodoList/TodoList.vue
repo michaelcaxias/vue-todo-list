@@ -34,6 +34,16 @@ export default {
       todo.completed = !todo.completed;
     },
   },
+  computed: {
+    remaining() {
+      const { todos } = this as ITodoList;
+      return todos.filter((todo) => !todo.completed);
+    },
+    completed() {
+      const { todos } = this as ITodoList;
+      return todos.filter((todo) => todo.completed);
+    },
+  },
 };
 </script>
 
@@ -55,7 +65,7 @@ export default {
         <li
           class="task"
           :class="{ completed: todo.completed }"
-          v-for="todo in todos"
+          v-for="todo in remaining"
           :key="todo.id"
         >
           {{ todo.text }}
@@ -78,6 +88,32 @@ export default {
         </li>
       </ul>
       <hr />
+      <ul class="task-list">
+        <li
+          class="task"
+          :class="{ completed: todo.completed }"
+          v-for="todo in completed"
+          :key="todo.id"
+        >
+          {{ todo.text }}
+          <div class="task-actions">
+            <button
+              class="complete-task-btn"
+              type="button"
+              @click="toggleTodo(todo)"
+            >
+              <vue-feather class="task-action" type="check"></vue-feather>
+            </button>
+            <button
+              class="remove-task-btn"
+              type="button"
+              @click="removeTodo(todo)"
+            >
+              <vue-feather class="task-action" type="x"></vue-feather>
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
