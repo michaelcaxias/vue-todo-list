@@ -25,6 +25,12 @@
     border-radius: $rounded 0 0 $rounded;
     border: 0.2rem solid $primary;
     width: 100%;
+    @include transition;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-black;
+    }
   }
 
   .add-todo-btn {
@@ -33,5 +39,14 @@
     border-radius: 0 $rounded $rounded 0;
     color: white;
     font-size: 2.5rem;
+
+    &:active {
+      background-color: $primary-black;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $primary-black;
+    }
   }
 }
