@@ -20,6 +20,7 @@ export default {
         };
 
         todos.push(todo);
+        localStorage.setItem('todos', JSON.stringify(todos));
         target.value = '';
       }
     },
@@ -29,9 +30,12 @@ export default {
       if (index > -1) {
         todos.splice(index, 1);
       }
+      localStorage.setItem('todos', JSON.stringify(todos));
     },
     toggleTodo(todo: ITodo) {
+      const { todos } = this as ITodoList;
       todo.completed = !todo.completed;
+      localStorage.setItem('todos', JSON.stringify(todos));
     },
   },
   computed: {
@@ -43,6 +47,13 @@ export default {
       const { todos } = this as ITodoList;
       return todos.filter((todo) => todo.completed);
     },
+  },
+  mounted() {
+    const { todos } = this as ITodoList;
+    const todosString = localStorage.getItem('todos');
+    if (todosString) {
+      todos.push(...JSON.parse(todosString));
+    }
   },
 };
 </script>
