@@ -30,6 +30,9 @@ export default {
         todos.splice(index, 1);
       }
     },
+    toggleTodo(todo: ITodo) {
+      todo.completed = !todo.completed;
+    },
   },
 };
 </script>
@@ -52,7 +55,11 @@ export default {
         <li class="task" v-for="todo in todos" :key="todo.id">
           {{ todo.text }}
           <div class="task-actions">
-            <button class="complete-task-btn" type="button">
+            <button
+              class="complete-task-btn"
+              type="button"
+              @click="toggleTodo(todo)"
+            >
               <vue-feather class="task-action" type="check"></vue-feather>
             </button>
             <button
