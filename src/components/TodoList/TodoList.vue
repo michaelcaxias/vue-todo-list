@@ -31,14 +31,20 @@ export default {
           type="text"
           @change="addTodo"
         />
-        <button class="add-todo-btn" type="button">+</button>
+        <button class="add-todo-btn" type="button">
+          <vue-feather type="plus"></vue-feather>
+        </button>
       </div>
       <ul class="task-list">
         <li class="task" v-for="todo in (todos as string[])" :key="todo">
           {{ todo }}
-          <div>
-            <button class="complete-task-btn" type="button">V</button>
-            <button class="remove-task-btn" type="button">X</button>
+          <div class="task-actions">
+            <button class="complete-task-btn" type="button">
+              <vue-feather class="task-action" type="check"></vue-feather>
+            </button>
+            <button class="remove-task-btn" type="button">
+              <vue-feather class="task-action" type="x"></vue-feather>
+            </button>
           </div>
         </li>
       </ul>
