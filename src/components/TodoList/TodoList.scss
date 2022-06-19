@@ -12,7 +12,8 @@
   .todo-container {
     background-color: rgba(255, 255, 255, 0.514);
     width: 30rem;
-    padding: 1rem;  
+    padding: 2rem;
+    border-radius: $rounded;
   }
 
   .add-todo-container {
@@ -33,6 +34,10 @@
     }
   }
 
+  .todo-input:focus ~ .add-todo-btn {
+    background-color: $primary-black;
+  }
+
   .add-todo-btn {
     @include button;
     background-color: $primary;
@@ -46,7 +51,22 @@
 
     &:focus {
       outline: none;
-      background-color: $primary-black;
+    }
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    .task {
+      padding: 1rem;
+      background-color: white;
+      list-style: none;
+      border-radius: $rounded;
+      color: $primary;
+      font-weight: 500;
     }
   }
 }

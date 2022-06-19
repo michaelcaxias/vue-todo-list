@@ -33,8 +33,8 @@ export default {
         />
         <button class="add-todo-btn" type="button">+</button>
       </div>
-      <ul>
-        <li v-for="todo in (todos as string[])" :key="todo">
+      <ul class="task-list">
+        <li class="task" v-for="todo in (todos as string[])" :key="todo">
           {{ todo }}
         </li>
       </ul>
