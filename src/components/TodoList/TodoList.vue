@@ -27,12 +27,12 @@ export default {
     <div>
       <input type="text" @change="addTodo" />
       <button type="button">Adicionar</button>
-      <ul>
-        <li v-for="todo in (todos as string[])" :key="todo">
-          {{ todo }}
-        </li>
-      </ul>
     </div>
+    <ul>
+      <li v-for="todo in (todos as string[])" :key="todo">
+        {{ todo }}
+      </li>
+    </ul>
   </div>
 </template>
 
