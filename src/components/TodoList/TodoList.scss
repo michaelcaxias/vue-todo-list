@@ -10,7 +10,7 @@
   width: 100%;
 
   .todo-container {
-    background-color: rgba(255, 255, 255, 0.514);
+    background-color: $transparent;
     border-radius: $rounded;
     max-height: 570px;
     overflow: auto;
@@ -111,6 +111,18 @@
         width: 15px;
       }
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $primary; 
+    border-radius: 10px;
   }
 }
 
