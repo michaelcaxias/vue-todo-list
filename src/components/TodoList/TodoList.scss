@@ -1,0 +1,140 @@
+@import '../../assets/sass/_index.scss';
+
+.container {
+  align-items: center;
+  background: linear-gradient(to right, $primary, #49CEF9);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  .todo-container {
+    background-color: $transparent;
+    border-radius: $rounded;
+    max-height: 570px;
+    overflow: auto;
+    padding: 2rem;
+    width: 40rem;
+  }
+
+  .add-todo-container {
+    display: flex;
+  }
+
+  .todo-input {
+    @include transition;
+    border-radius: $rounded 0 0 $rounded;
+    border: 0.2rem solid $primary;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+
+    &:focus {
+      border-color: $primary-black;
+      outline: none;
+    }
+  }
+
+  .todo-input:focus ~ .add-todo-btn {
+    background-color: $primary-black;
+  }
+
+  .add-todo-btn {
+    @include button;
+    background-color: $primary;
+    border-radius: 0 $rounded $rounded 0;
+    color: white;
+    display: grid;
+    padding: 1rem 1rem 1rem 0.8rem;
+    place-items: center;
+
+    &:active {
+      background-color: $primary-black;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    .task {
+      background-color: white;
+      border-radius: $rounded;
+      color: $primary;
+      display: flex;
+      font-weight: 500;
+      justify-content: space-between;
+      list-style: none;
+      padding: 1rem;
+    }
+
+    .completed {
+      background-color: $primary;
+      color: white;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      
+      button {
+        @include button;
+        align-items: center;
+        background-color: #D8E5F7;
+        border-radius: 50%;
+        color: $primary;
+        display: flex;
+        font-weight: bolder;
+        justify-content: center;
+        padding: 0;
+        width: 1.5rem;
+
+        &:hover {
+          background-color: #B7C9E3;
+        }
+
+        &:focus-visible {
+          outline: 1px solid $primary;
+        }
+      }
+
+      .task-action {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $primary; 
+    border-radius: 10px;
+  }
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.151);
+  border-radius: $rounded;
+}
+
+@media screen and (max-width: $mobile) {
+  .container .todo-container {
+    width: 95%;
+    max-height: 95%;
+  }
+}
