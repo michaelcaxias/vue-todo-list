@@ -28,7 +28,7 @@ export default {
       <input type="text" @change="addTodo" />
       <button type="button">Adicionar</button>
       <ul>
-        <li v-for="todo in todos" :key="todo">
+        <li v-for="todo in (todos as string[])" :key="todo">
           {{ todo }}
         </li>
       </ul>
