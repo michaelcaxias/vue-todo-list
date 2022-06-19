@@ -1,4 +1,10 @@
+export interface ITodo {
+  id: number,
+  text: string,
+  completed: boolean,
+}
+
 export interface ITodoList {
-  todos: string[];
+  todos: ITodo[];
   addTodo: (evenr: Event) => void;
 }

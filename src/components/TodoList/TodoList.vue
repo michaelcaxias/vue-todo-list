@@ -1,11 +1,11 @@
 <script lang="ts">
-import type { ITodoList } from '../../interfaces/ITodoList';
+import type { ITodoList, ITodo } from '../../interfaces/ITodoList';
 
 export default {
   name: 'TodoList',
   data() {
     return {
-      todos: [] as string[],
+      todos: [] as ITodo[],
     };
   },
   methods: {
@@ -13,7 +13,13 @@ export default {
       const { todos } = this as ITodoList;
       const target = event.target as HTMLInputElement;
       if (target.value) {
-        todos.push(target.value);
+        const todo: ITodo = {
+          id: todos.length,
+          text: target.value,
+          completed: false,
+        };
+
+        todos.push(todo);
         target.value = '';
       }
     },
@@ -36,8 +42,8 @@ export default {
         </button>
       </div>
       <ul class="task-list">
-        <li class="task" v-for="todo in (todos as string[])" :key="todo">
-          {{ todo }}
+        <li class="task" v-for="todo in todos" :key="todo.id">
+          {{ todo.text }}
           <div class="task-actions">
             <button class="complete-task-btn" type="button">
               <vue-feather class="task-action" type="check"></vue-feather>
