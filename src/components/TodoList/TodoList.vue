@@ -1,15 +1,19 @@
 <script lang="ts">
+import type { ITodoList } from '../../interfaces/ITodoList';
+
 export default {
   name: 'TodoList',
   data() {
     return {
-      todos: [],
+      todos: [] as string[],
     };
   },
   methods: {
-    addTodo({ target }) {
+    addTodo(event: Event) {
+      const { todos } = this as ITodoList;
+      const target = event.target as HTMLInputElement;
       if (target.value) {
-        this.todos.push(target.value);
+        todos.push(target.value);
         target.value = '';
       }
     },
