@@ -28,12 +28,10 @@
   }
 
   .add-todo-btn {
-    cursor: pointer;
+    @include button;
     background-color: $primary;
-    border: none;
     border-radius: 0 $rounded $rounded 0;
     color: white;
-    padding: 0 1rem;
     font-size: 2.5rem;
   }
 }
