@@ -49,7 +49,7 @@ export default {
     },
   },
   mounted() {
-    const { todos } = this as ITodoList;
+    const { todos } = this as unknown as ITodoList;
     const todosString = localStorage.getItem('todos');
     if (todosString) {
       todos.push(...JSON.parse(todosString));
