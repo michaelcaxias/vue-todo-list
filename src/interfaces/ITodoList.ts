@@ -7,4 +7,5 @@ export interface ITodo {
 export interface ITodoList {
   todos: ITodo[];
   addTodo: (evenr: Event) => void;
+  removeTodo: (todo: ITodo) => void;
 }

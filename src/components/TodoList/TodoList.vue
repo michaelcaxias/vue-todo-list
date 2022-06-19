@@ -23,6 +23,13 @@ export default {
         target.value = '';
       }
     },
+    removeTodo(todo: ITodo) {
+      const { todos } = this as ITodoList;
+      const index = todos.indexOf(todo);
+      if (index > -1) {
+        todos.splice(index, 1);
+      }
+    },
   },
 };
 </script>
@@ -48,7 +55,11 @@ export default {
             <button class="complete-task-btn" type="button">
               <vue-feather class="task-action" type="check"></vue-feather>
             </button>
-            <button class="remove-task-btn" type="button">
+            <button
+              class="remove-task-btn"
+              type="button"
+              @click="removeTodo(todo)"
+            >
               <vue-feather class="task-action" type="x"></vue-feather>
             </button>
           </div>
